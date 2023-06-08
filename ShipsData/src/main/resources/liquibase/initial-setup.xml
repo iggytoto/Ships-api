@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="initial-sequence" author="gassan">
+        <createSequence sequenceName="s_users_id" dataType="int" startValue="1" incrementBy="1"/>
+        <createSequence sequenceName="s_tokens_id" dataType="int" startValue="1" incrementBy="1"/>
+        <createSequence sequenceName="s_matches_id" dataType="int" startValue="1" incrementBy="1"/>
+    </changeSet>
+    <changeSet id="initial-table-users" author="gassan">
+        <createTable tableName="users">
+            <column name="id" type="int" defaultValueSequenceNext="s_users_id">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar">
+                <constraints notNullConstraintName="c_nn_users_name"/>
+            </column>
+            <column name="password_sha" type="varchar"/>
+            <column name="role" type="varchar">
+                <constraints notNullConstraintName="c_nn_users_role"/>
+            </column>
+        </createTable>
+        <insert tableName="users">
+            <column name="id" value="-1"/>
+            <column name="role" value="Player"/>
+            <column name="name" value="World"/>
+            <column name="password_sha" value=""/>
+        </insert>
+    </changeSet>
+    <changeSet id="initial-table-tokens" author="gassan">
+        <createTable tableName="tokens">
+            <column name="id" type="int" defaultValueSequenceNext="s_tokens_id">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="value" type="varchar"/>
+            <column name="user_id" type="int">
+                <constraints notNullConstraintName="c_nn_tokens_user_id" unique="true"/>
+            </column>
+            <column name="valid_to" type="datetime">
+                <constraints notNullConstraintName="c_nn_tokens_valid_to"/>
+            </column>
+            <column name="permanent" type="boolean" defaultValue="false"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="tokens"
+                                 baseColumnNames="user_id"
+                                 constraintName="tokens_fk_user_id"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="initial-table-units" author="gassan">
+        <createTable tableName="units">
+            <column name="id" type="int" defaultValueSequenceNext="s_units_id">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="owner_id" type="int"/>
+            <column name="hp" type="int"/>
+            <column name="max_hp" type="int"/>
+            <column name="mana" type="int">
+                <constraints notNullConstraintName="c_nn_units_mana"/>
+            </column>
+            <column name="max_mana" type="int"/>
+            <column name="armor" type="int"/>
+            <column name="mr" type="int"/>
+            <column name="dmg" type="int"/>
+            <column name="atk_spd" type="real"/>
+            <column name="activity" type="varchar" defaultValue="Idle"/>
+            <column name="attack_range" type="real" defaultValue="2"/>
+            <column name="battle_behavior" type="varchar" defaultValue="StraightAttack"/>
+            <column name="movement_speed" type="real" defaultValue="4"/>
+            <column name="unit_type" type="varchar" defaultValue="Dummy"/>
+            <column name="unit_skills_id" type="int"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="units"
+                                 baseColumnNames="owner_id"
+                                 constraintName="units_fk_owner_id"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="initial-table-matches" author="gassan">
+        <createTable tableName="matches">
+            <column name="id" type="int" defaultValueSequenceNext="s_matches_id">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_one_id" type="int">
+                <constraints unique="true" nullable="true"/>
+            </column>
+            <column name="user_two_id" type="int">
+                <constraints unique="true" nullable="true"/>
+            </column>
+            <column name="status" type="varchar"/>
+            <column name="address" type="varchar"/>
+            <column name="port" type="varchar"/>
+            <column name="created_at" type="datetime"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="matches"
+                                 baseColumnNames="user_one_id"
+                                 constraintName="matches_user_one_fk_user_id"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="matches"
+                                 baseColumnNames="user_two_id"
+                                 constraintName="matches_user_two_fk_user_id"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
