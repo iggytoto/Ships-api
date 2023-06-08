@@ -56,15 +56,15 @@
         </dependency>
 
         <dependency>
-            <groupId>org.gassangaming</groupId>
-            <artifactId>DungeonsService</artifactId>
+            <groupId>org.vadimichi</groupId>
+            <artifactId>ShipsService</artifactId>
             <version>1.0.0</version>
         </dependency>
-
         <dependency>
-            <groupId>org.gassangaming</groupId>
-            <artifactId>DungeonsData</artifactId>
+            <groupId>org.vadimichi</groupId>
+            <artifactId>ShipsData</artifactId>
             <version>1.0.0</version>
+            <scope>compile</scope>
         </dependency>
 
     </dependencies>

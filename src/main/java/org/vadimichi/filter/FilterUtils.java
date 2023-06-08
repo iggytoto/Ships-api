@@ -1,7 +1,7 @@
 package org.vadimichi.filter;
 
-import org.gassangaming.dto.ErrorResponseDto;
 import org.springframework.http.HttpStatus;
+import org.vadimichi.dto.ErrorResponseDto;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

@@ -1,10 +1,6 @@
 package org.vadimichi.filter;
 
 import com.fasterxml.jackson.databind.exc.InvalidDefinitionException;
-import org.vadimichi.controller.AuthController;
-import org.gassangaming.service.UserContext;
-import org.gassangaming.service.auth.AuthService;
-import org.gassangaming.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -12,6 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.vadimichi.controller.AuthController;
+import org.vadimichi.service.UserContext;
+import org.vadimichi.service.auth.AuthService;
+import org.vadimichi.service.exception.ServiceException;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

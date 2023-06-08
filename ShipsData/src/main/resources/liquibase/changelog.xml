@@ -9,7 +9,4 @@
 		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
 		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
     <include file="liquibase/initial-setup.xml"/>
-    <include file="liquibase/initial-setup-events.xml"/>
-    <include file="liquibase/initial-setup-dungeons.xml"/>
-    <include file="liquibase/test-data.changelog.xml"/>
 </databaseChangeLog>

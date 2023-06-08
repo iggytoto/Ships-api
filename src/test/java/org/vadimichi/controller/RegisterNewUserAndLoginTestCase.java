@@ -1,16 +1,16 @@
 package org.vadimichi.controller;
 
-import org.vadimichi.dto.controllers.login.LoginRequestDto;
-import org.vadimichi.dto.controllers.login.LoginResponseDto;
-import org.vadimichi.dto.controllers.login.RegisterRequestDto;
-import org.vadimichi.dto.controllers.login.RegisterResponseDto;
-import org.gassangaming.repository.TokenRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.Assert;
+import org.vadimichi.dto.controllers.login.LoginRequestDto;
+import org.vadimichi.dto.controllers.login.LoginResponseDto;
+import org.vadimichi.dto.controllers.login.RegisterRequestDto;
+import org.vadimichi.dto.controllers.login.RegisterResponseDto;
+import org.vadimichi.repository.TokenRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

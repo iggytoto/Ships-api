@@ -2,7 +2,7 @@ package org.vadimichi.dto.controllers.login;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import org.gassangaming.dto.DtoBase;
+import org.vadimichi.dto.DtoBase;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

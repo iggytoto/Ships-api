@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
 
 @SpringBootApplication
-@EntityScan(basePackageClasses = {org.gassangaming.model.User.class})
+@EntityScan(basePackageClasses = {org.vadimichi.model.User.class})
 public class ServerApplication {
 
     public static void main(String... args) {

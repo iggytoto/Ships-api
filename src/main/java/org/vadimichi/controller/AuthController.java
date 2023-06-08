@@ -2,18 +2,18 @@ package org.vadimichi.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.common.io.BaseEncoding;
+import org.vadimichi.dto.DtoBase;
+import org.vadimichi.dto.ErrorResponseDto;
 import org.vadimichi.dto.controllers.login.LoginRequestDto;
 import org.vadimichi.dto.controllers.login.LoginResponseDto;
 import org.vadimichi.dto.controllers.login.RegisterRequestDto;
 import org.vadimichi.dto.controllers.login.RegisterResponseDto;
-import org.gassangaming.dto.DtoBase;
-import org.gassangaming.dto.ErrorResponseDto;
-import org.gassangaming.service.auth.AuthService;
-import org.gassangaming.service.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.vadimichi.service.auth.AuthService;
+import org.vadimichi.service.exception.ServiceException;
 
 @RestController
 public class AuthController {
