@@ -35,8 +35,6 @@ public class ServerAccessFilter extends OncePerRequestFilter {
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
         return
-                !request.getRequestURI().contains(MatchMakingController.PATH + MatchMakingController.APPLY_SERVER_PATH) &&
-                        !request.getRequestURI().contains(MatchMakingController.PATH + MatchMakingController.SAVE_EVENT_INSTANCE_RESULT) &&
-                        !request.getRequestURI().contains(MatchMakingController.PATH + MatchMakingController.GET_DATA_PATH);
+                !request.getRequestURI().contains(MatchMakingController.PATH + MatchMakingController.APPLY_SERVER_PATH);
     }
 }

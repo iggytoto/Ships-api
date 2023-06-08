@@ -2,7 +2,7 @@ package org.vadimichi.service;
 
 import lombok.Builder;
 import lombok.Data;
-import org.vadimichi.model.Token;
+import org.vadimichi.model.auth.Token;
 
 @Data
 @Builder

@@ -1,4 +1,4 @@
-package org.vadimichi.model;
+package org.vadimichi.model.matchmaking;
 
 public enum MatchStatus {
     Searching,

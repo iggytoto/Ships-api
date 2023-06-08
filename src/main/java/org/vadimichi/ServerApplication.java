@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
+import org.vadimichi.model.auth.User;
 
 @SpringBootApplication
-@EntityScan(basePackageClasses = {org.vadimichi.model.User.class})
+@EntityScan(basePackageClasses = {User.class})
 public class ServerApplication {
 
     public static void main(String... args) {

@@ -1,6 +1,6 @@
 package org.vadimichi.service.auth;
 
-import org.vadimichi.model.Token;
+import org.vadimichi.model.auth.Token;
 import org.vadimichi.service.UserContext;
 import org.vadimichi.service.exception.ServiceException;
 import org.springframework.stereotype.Service;

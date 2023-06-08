@@ -1,4 +1,4 @@
-package org.vadimichi.model;
+package org.vadimichi.model.auth;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import org.vadimichi.service.Role;
 import javax.persistence.*;
 import java.io.Serializable;
 
-import static org.vadimichi.model.User.TABLE_NAME;
+import static org.vadimichi.model.auth.User.TABLE_NAME;
 
 @Entity
 @Table(name = TABLE_NAME)
