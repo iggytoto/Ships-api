@@ -11,10 +11,10 @@ API for dungeons game. Provides common functionality of saving player state, doi
 - run plugin for database structure creation
   - DungeonsData -> plugins -> liquibase -> liquibase:update
   - in case db is not empty and you want to recreate it
-    - DungeonsData -> plugins -> liquibase -> liquibase:dropall
-    - DungeonsData -> plugins -> liquibase -> liquibase:update
+    - ShipsData -> plugins -> liquibase -> liquibase:dropall
+    - ShipsData -> plugins -> liquibase -> liquibase:update
 - create run configuration type application
-  - with -cp Dungeons-Api
-  - check that working directory \Dungeons-Api
+  - with -cp Ships-api
+  - check that working directory \Ships-api
   - entry point class is ServerApplication
 - run configuration
